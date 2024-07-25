@@ -1,0 +1,5 @@
+Bill breakdown: 
+bread:                    ... $300.5
+donut:                    ... $400
+tip:                      ...$1000 
+total:                    ...$1700.50
