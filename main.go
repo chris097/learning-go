@@ -1,10 +1,12 @@
 package main
 
 import (
+	"crypto/rand"
 	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
+	"strconv"
 
 	"github.com/gorilla/mux"
 )
@@ -50,6 +52,25 @@ func getMovie(res http.ResponseWriter, req *http.Request) {
 		}
 	}
 }
+
+func createMovies(res http.ResponseWriter, req *http.Request) {
+	res.Header().Set("Content-Type", "application/json")
+	var movie Movie
+	_ = json.NewDecoder(req.Body).Decode(&movie)
+	movie.ID = strconv.Itoa(rand.Int(100000000))
+	movies = append(movies, movie)
+	json.NewEncoder(res).Encode(movie)
+}
+
+// func updateMovies(res http.ResponseWriter, req *http.Request) {
+// 	res.Header().Set("Content-Type", "application/json")
+// 	params := mux.Vars(req)
+// 	for _, item := range movies {
+// 		if item.ID == params["id"] {
+
+// 		}
+// 	}
+// }
 
 func main() {
 	r := mux.NewRouter()
