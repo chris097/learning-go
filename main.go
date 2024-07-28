@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	fmt.Println("Learning Go with Gin framework and Gorm")
+	fmt.Println("Learning Go with Gin framework and Gorm on DB")
 }
