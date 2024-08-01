@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	fmt.Println("Successfully connect DB")
+	fmt.Println("Successfully connect DB and Gin")
 }
